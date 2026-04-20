@@ -280,28 +280,92 @@
     .constraint-cell h3 { font-size: 0.88rem; margin-bottom: 4px; }
     .constraint-cell p { font-size: 0.84rem; line-height: 1.5; }
 
-    /* ── BUILDER DEFINITION ── */
-    .builder-block {
-      background: var(--amethyst-bg);
-      border: 1px solid #ddd6fe;
-      border-radius: 10px;
-      padding: 32px 36px;
+    /* ── 30/60/90 PLAN ── */
+    .plan-intro {
+      font-size: 0.92rem;
+      margin-bottom: 28px;
+    }
+    .plan-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 36px;
-      align-items: start;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
-    .builder-block p { font-size: 0.92rem; color: #4c1d95; font-weight: 300; }
-    .builder-block strong { color: #3b0764; }
-    .builder-tags { display: flex; flex-direction: column; gap: 1px; }
-    .btag {
-      display: flex; align-items: center; gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid #ddd6fe;
-      font-size: 0.87rem; color: #5b21b6; font-weight: 400;
+    .plan-col {
+      border-radius: 10px;
+      border: 1px solid;
+      overflow: hidden;
     }
-    .btag:last-child { border-bottom: none; }
-    .btag svg { flex-shrink: 0; }
+    .plan-col.p30 { border-color: #bfdbfe; }
+    .plan-col.p60 { border-color: #ddd6fe; }
+    .plan-col.p90 { border-color: #99f6e4; }
+    .plan-header {
+      padding: 18px 20px 16px;
+      border-bottom: 1px solid;
+    }
+    .plan-col.p30 .plan-header { background: var(--sapphire-bg); border-color: #bfdbfe; }
+    .plan-col.p60 .plan-header { background: var(--amethyst-bg); border-color: #ddd6fe; }
+    .plan-col.p90 .plan-header { background: var(--teal-bg); border-color: #99f6e4; }
+    .plan-timeframe {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .plan-col.p30 .plan-timeframe { color: var(--sapphire); }
+    .plan-col.p60 .plan-timeframe { color: var(--amethyst); }
+    .plan-col.p90 .plan-timeframe { color: var(--teal); }
+    .plan-theme {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .plan-col.p30 .plan-theme { color: #3b82f6; }
+    .plan-col.p60 .plan-theme { color: #8b5cf6; }
+    .plan-col.p90 .plan-theme { color: #14b8a6; }
+    .plan-body {
+      padding: 16px 20px 20px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .plan-initiative { }
+    .plan-initiative-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .plan-initiative-title svg { flex-shrink: 0; }
+    .plan-initiative ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .plan-initiative li {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.45;
+      padding-left: 12px;
+      position: relative;
+    }
+    .plan-initiative li::before {
+      content: '·';
+      position: absolute;
+      left: 2px;
+      color: var(--rule);
+      font-size: 1rem;
+      line-height: 1.2;
+    }
 
     /* ── PRINCIPLES ── */
     .principles-list { display: flex; flex-direction: column; }
@@ -402,7 +466,7 @@
       .metric-hero { grid-template-columns: 1fr; }
       .kpi-row { grid-template-columns: 1fr 1fr; }
       .constraint-grid { grid-template-columns: 1fr; }
-      .builder-block { grid-template-columns: 1fr; }
+      .plan-grid { grid-template-columns: 1fr; }
       .ssc-wrap { grid-template-columns: 1fr; }
       .op-wrap { padding: 48px 20px; }
     }
@@ -594,35 +658,170 @@
     </div>
   </div>
 
-  <!-- BUILDER DEFINITION -->
+  <!-- 30/60/90 PLAN -->
   <div class="section">
     <div class="section-label">
-      <div class="section-num" style="color:var(--amethyst);">03</div>
-      <div class="section-title">Builder Definition</div>
-      <div class="section-icon-wrap" style="background:var(--amethyst-bg); margin-top:12px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amethyst)" stroke-width="2"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+      <div class="section-num" style="color:var(--sapphire);">03</div>
+      <div class="section-title">30 / 60 / 90 Plan</div>
+      <div class="section-icon-wrap" style="background:var(--sapphire-bg); margin-top:12px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sapphire)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       </div>
     </div>
     <div>
-      <div class="builder-block">
-        <div>
-          <h3 style="color:#3b0764; margin-bottom:10px;">Working Definition</h3>
-          <p>Builder refers to users <strong>directly responsible for implementing and using analytics within a product</strong>. This definition will evolve as we instrument and learn.</p>
+      <p class="plan-intro">We will focus on a small number of high-impact areas at a time given team size and current constraints.</p>
+      <div class="plan-grid">
+
+        <!-- 30 DAYS -->
+        <div class="plan-col p30">
+          <div class="plan-header">
+            <div class="plan-timeframe">30 days</div>
+            <div class="plan-theme">Clarity + Momentum</div>
+          </div>
+          <div class="plan-body">
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sapphire)" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Establish working model across pods
+              </div>
+              <ul>
+                <li>Align on ownership for key surfaces (homepage, pricing, lifecycle)</li>
+                <li>Set a lightweight cadence for sharing experiments and priorities</li>
+                <li>Reduce duplicated work across teams</li>
+              </ul>
+            </div>
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sapphire)" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Ship and evaluate homepage experiment
+              </div>
+              <ul>
+                <li>Call winner based on activation-quality metrics</li>
+                <li>Define next iteration framework for website testing</li>
+              </ul>
+            </div>
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sapphire)" stroke-width="2.5"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/></svg>
+                Define builder (working definition)
+              </div>
+              <ul>
+                <li>Align with PMM and Product on a practical definition</li>
+                <li>Identify where builder-specific messaging should exist first</li>
+              </ul>
+            </div>
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sapphire)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Identify lifecycle opportunity areas
+              </div>
+              <ul>
+                <li>Map activation → habit journey</li>
+                <li>Identify highest-impact gaps (no heavy build yet)</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="builder-tags">
-          <div class="btag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--amethyst)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Technical users — engineers, data engineers
+
+        <!-- 60 DAYS -->
+        <div class="plan-col p60">
+          <div class="plan-header">
+            <div class="plan-timeframe">60 days</div>
+            <div class="plan-theme">Focused Execution</div>
           </div>
-          <div class="btag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--amethyst)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            Product &amp; growth operators
-          </div>
-          <div class="btag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--amethyst)" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            Early-stage founders &amp; small teams
+          <div class="plan-body">
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--amethyst)" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                Stand up website experimentation system (V1)
+              </div>
+              <ul>
+                <li>Extend testing beyond homepage → pricing + key conversion surfaces</li>
+                <li>Establish repeatable test cadence</li>
+              </ul>
+            </div>
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--amethyst)" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Develop builder growth approach (V1)
+              </div>
+              <ul>
+                <li>Launch initial builder-specific messaging on key surfaces</li>
+                <li>Test positioning and conversion impact</li>
+              </ul>
+            </div>
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--amethyst)" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Launch first lifecycle pilots
+              </div>
+              <ul>
+                <li>Target 1–2 high-impact moments (e.g. early drop-off, lack of return usage)</li>
+                <li>Measure engagement and behavior change</li>
+              </ul>
+            </div>
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--amethyst)" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Improve monetization surfaces (V1)
+              </div>
+              <ul>
+                <li>Iterate on pricing page clarity</li>
+                <li>Reduce friction in upgrade flows</li>
+              </ul>
+            </div>
           </div>
         </div>
+
+        <!-- 90 DAYS -->
+        <div class="plan-col p90">
+          <div class="plan-header">
+            <div class="plan-timeframe">90 days</div>
+            <div class="plan-theme">Scale What Works</div>
+          </div>
+          <div class="plan-body">
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                Scale website experimentation
+              </div>
+              <ul>
+                <li>Apply learnings across homepage, pricing, and key flows</li>
+                <li>Establish testing as a consistent operating rhythm</li>
+              </ul>
+            </div>
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+                Refine builder targeting &amp; segmentation
+              </div>
+              <ul>
+                <li>Incorporate learnings into messaging and surface personalization</li>
+                <li>Partner with Product/Data on longer-term instrumentation</li>
+              </ul>
+            </div>
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                Build repeatable lifecycle system (V1)
+              </div>
+              <ul>
+                <li>Define triggers, interventions, and measurement framework</li>
+                <li>Expand beyond initial pilots</li>
+              </ul>
+            </div>
+            <div class="plan-initiative">
+              <div class="plan-initiative-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Improve PLS signal quality &amp; alignment
+              </div>
+              <ul>
+                <li>Refine what constitutes a high-quality signal</li>
+                <li>Align with Sales on routing and follow-up</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -632,6 +831,7 @@
     <div class="section-label">
       <div class="section-num" style="color:var(--teal);">04</div>
       <div class="section-title">How We Operate</div>
+
       <div class="section-icon-wrap" style="background:var(--teal-bg); margin-top:12px;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
       </div>
